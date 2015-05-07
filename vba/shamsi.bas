@@ -85,15 +85,15 @@ Public Property Get GDate() As Date
     End If
     I = 0
     off = 0
-    While g_day_no >= (g_days_in_month(I) + off)
+    Do While g_day_no >= (g_days_in_month(I) + off)
         g_day_no = g_day_no - (g_days_in_month(I) + off)
+        I = I + 1
         If I = 1 And leap Then
             off = 1
         Else
             off = 0
         End If
-        I = I + 1
-    Wend
+    Loop
     gm = I + 1
     gd = g_day_no + 1
     
